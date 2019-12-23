@@ -130,10 +130,6 @@
 			<name>Spring Milestones</name>
 			<url>https://repo.spring.io/milestone</url>
 		</repository>
-	  	<repository>
-	  		<id>kluck-maven-repository</id>
-	  		<url>s3://kluck-maven-repository/snapshot</url>
-	  	</repository>
 	</repositories>
 	
 	<pluginRepositories>
