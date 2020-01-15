@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.2.2.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.getkluck</groupId>
 	<artifactId>kluck-parent</artifactId>
-	<version>0.0.2-RELEASE</version>
-	<name>kluck-parent</name>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>sas-parent</name>
 	<description>Kluck Parent Project</description>
 	<packaging>pom</packaging>
 
@@ -143,6 +144,17 @@
 				</dependencies>
 			</plugin> 
 			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.7</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>       
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
 				<executions>
@@ -163,23 +175,10 @@
 				<executions>
 					<execution>
 					<id>attach-javadoc</id>
-					<goals />
+					<goals></goals>
 					</execution>  
 				</executions>
-			</plugin>	
-			<plugin>
-        		<groupId>org.apache.maven.plugins</groupId>
-        		<artifactId>maven-gpg-plugin</artifactId>
-        		<executions>
-          			<execution>
-            			<id>sign-artifacts</id>
-						<phase>verify</phase>
-            			<goals>
-              				<goal>sign</goal>
-            			</goals>
-          			</execution>
-        		</executions>
-      		</plugin>					
+			</plugin>			
 		</plugins>
  		<extensions>
       		<extension>
@@ -247,38 +246,10 @@
 			<url>https://repo.spring.io/milestone</url>
 		</pluginRepository>
 	</pluginRepositories>
-    <url>https://github.com/getkluck/schemaorg-java</url>
-    
-    <organization>
-        <name>com.getkluck</name>
-        <url>https://getkluck.com</url>
-    </organization>
-    
-    <issueManagement>
-        <system>GitHub</system>
-        <url>https://github.com/getkluck/schemaorg-java/issues</url>
-    </issueManagement>
-    
-    <licenses>
-        <license>
-            <name>Apache License 2.0</name>
-            <url>https://github.com/getkluck/schemaorg-java/blob/master/LICENSE</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-    
-    <scm>
-        <url>https://github.com/getkluck/schemaorg-java</url>
-        <connection>
-            scm:git:git://github.com/getkluck/schemaorg-java.git
-        </connection>
-        <developerConnection>
-            scm:git:ssh://git@github.com:getkluck/schemaorg-java.git
-        </developerConnection>
-    </scm>
-    <developers>
-        <developer>
-            <name>Kluck</name>
-        </developer>
-    </developers>
- </project>
+	<scm>
+		<connection>scm:git:git://github.com/dexecutor/dependent-tasks-executor.git</connection>
+		<developerConnection>scm:git:git@github.com:dexecutor/dexecutor.git</developerConnection>
+		<url>https://github.com/dexecutor/dependent-tasks-executor</url>
+		<tag>HEAD</tag>
+	</scm>
+</project>
